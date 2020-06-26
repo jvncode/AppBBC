@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <h1 align='center'>Baby Converter</h1>
+    <h5 align='center'>Convierte lo que tu bebé ya no usa en algo que necesita</h5>
+    <hr>
+</head>
+<body style="background: sandybrown;">
+
+    <section>
+        {% block section %} {% endblock %}
+    </section>
+</body>
+
+<footer style="position: fixed; bottom:0px">
+    <hr style="width: 730%;">
+    <small>Baby Converter &copy; 2020 Todos los derechos reservados</small>
+</footer>
+</html>

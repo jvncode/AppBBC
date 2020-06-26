@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} B&C - Registro de usuarios {% endblock %}
+{% block section %}
+    <h2 align='center'>Registrar usuario</h2>
+
+    <form method="POST" style="text-align: center;">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <a href="/login" class="button">Iniciar sesión</a>
+{% endblock %}

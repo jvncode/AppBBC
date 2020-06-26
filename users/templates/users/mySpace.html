@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} B&C - Bienvenid@ a Baby Converter {% endblock %}
+
+{% block section %}
+    {% csrf_token %}
+    <h4 style="margin-left: 2%;"><u>Área personal de {{ user }}</u></h4>
+    <a href="/myProducts" class="button" style="margin-left:20%;">Mis productos publicados</a>
+    <a href="/newProduct" class="button" style="margin-left:50%;">Publicar nuevo productos</a>
+
+
+    <a href="/logout" class="button" style="margin-left:80%;">Cerrar sesión</a>
+
+{% endblock %}
