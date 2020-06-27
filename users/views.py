@@ -52,7 +52,6 @@ def login(request):
                 # Hacemos el login manualmente
                 do_login(request, user)
                 # Y le redireccionamos a la portada
-                print('paso por aqui')
                 return render(request, 'users/mySpace.html', {'user': user})
 
     # Si llegamos al final renderizamos el formulario
@@ -70,3 +69,4 @@ def mySpace(request):
     # En otro caso redireccionamos al login
     else:
         return redirect('/login')
+

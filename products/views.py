@@ -40,3 +40,8 @@ class CreateProduct(View):
         }
         return render(request, 'products/newProduct.html', context)
     
+
+class SearchProduct(View):
+    def get(self, request):
+        return render(request, 'products/searchProduct.html')
+    

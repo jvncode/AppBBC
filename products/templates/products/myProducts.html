@@ -3,5 +3,33 @@
 {% block title %} B&C - Mis productos publicados {% endblock %}
 
 {% block section %}
-<p>{{ products_list }} {{ anos }}</p>
+    <h4 align='center'><u>Mis productos publicados</u></h4>
+
+    <div id="div1">
+        <table class="u-full-width" border="5">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Descripción</th>
+                    <th>Antigüedad</th>
+                    <th>Imagen</th>
+                    <th>Ubicación</th>
+                </tr>
+            </thead>
+        {% for item in products_list %}
+            <tbody>
+                <tr>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.description}}</td>
+                    <td>{{ item.years }}</td>
+                    <td>{{ item.image }}</td>
+                    <td>{{ item.location }}</td>
+                </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+    </div>
+    <br>
+    <a href="/mySpace" class="button" style="margin-left:45%; position:fixed">Mi Área Personal</a>
+
 {% endblock %}

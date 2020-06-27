@@ -3,7 +3,8 @@
 {% block title %} B&C - Publicar producto {% endblock %}
 
 {% block section %}
-{% if success_message %} <span style='color:green'>{{ success_message|safe }}</span>{% endif %}
+<a href="/mySpace" class="button" style="margin-left:80%; position:fixed">Mi Área Personal</a>
+{% if success_message %} <span style='color: red; margin-left:2%; font-size:medium; position:fixed'>{{ success_message|safe }}</span>{% endif %}
     <form method="POST" style="text-align: center;">
     {% csrf_token %}
     {{ form.as_table }}
