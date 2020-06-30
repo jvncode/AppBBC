@@ -4,7 +4,40 @@
 
 {% block section %}
     <h4 align='center'><u>Búsqueda de artículos</u></h4>
-
+    <form method="POST">
+    {% csrf_token %}
+        <input type="text" id="BusquedaSet" name="BusquedaSet" style="position:fixed; margin-left:28%" size="80" placeholder="Busca el artículo que te interesa">
+        <button type="submit" class="button" style="position: fixed; margin-left:70%">Buscar artículo</button>
+    </form>
+    <br><br>
     <a href="/mySpace" class="button" style="margin-left:45%; position:fixed">Mi Área Personal</a>
-
+    {% if method == POST %}
+    {% if products != None %}
+    <br><br>
+    <div id="div1">
+        <table class="u-full-width" border="5">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Descripción</th>
+                    <th>Antigüedad</th>
+                    <th>Imagen</th>
+                    <th>Ubicación</th>
+                </tr>
+            </thead>
+            {% for item in products %}
+            <tbody>
+                <tr>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.description}}</td>
+                    <td>{{ item.years }}</td>
+                    <td>{{ item.image }}</td>
+                    <td>{{ item.location }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+    {% endif %}
 {% endblock %}

@@ -44,4 +44,12 @@ class CreateProduct(View):
 class SearchProduct(View):
     def get(self, request):
         return render(request, 'products/searchProduct.html')
-    
+
+    def post(self, request):
+        q = request.POST.get('BusquedaSet')
+        if q != '':
+            products = Product.objects.filter(description__icontains=q)
+        else:
+            products = None
+        return render(request, 'products/searchProduct.html', {'products': products})
+
