@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# CATEGORIES
+# CATEGORIAS
 CATEGORIES = (
     ('MOB', 'Mobiliario'),
     ('TEX', 'Textil'),
@@ -130,3 +130,13 @@ CATEGORIES = (
     ('UTE', 'Utensilios'),
     ('JUG', 'Juguetes'),
 )
+
+# FUNCIONALIDADES
+FUNCTIONALITIES = (
+    ('PER', 'Como nuevo y en perfecto estado de uso'),
+    ('NOR', 'Algún deterioro pero no afecta a su funcionalidad'),
+    ('DEF', 'Algún deterioro que afecta ligeramente a su funcionalidad')
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

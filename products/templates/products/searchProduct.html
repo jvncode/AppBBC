@@ -7,10 +7,10 @@
     <form method="POST">
     {% csrf_token %}
         <input type="text" id="BusquedaSet" name="BusquedaSet" style="position:fixed; margin-left:28%" size="80" placeholder="Busca el artículo que te interesa">
-        <button type="submit" class="button" style="position: fixed; margin-left:70%">Buscar artículo</button>
+        <button type="submit" class="button" style="position: fixed; margin-left:75%">Buscar artículo</button>
     </form>
     <br><br>
-    <a href="/mySpace" class="button" style="margin-left:45%; position:fixed">Mi Área Personal</a>
+    <a href="/mySpace" class="button" style="margin-left:79%; margin-top:-9%; position:fixed">Mi Área Personal</a>
     {% if method == POST %}
     {% if products != None %}
     <br><br>
@@ -20,7 +20,7 @@
                 <tr>
                     <th>Categoria</th>
                     <th>Descripción</th>
-                    <th>Antigüedad</th>
+                    <th>Estado de uso</th>
                     <th>Imagen</th>
                     <th>Ubicación</th>
                 </tr>
@@ -30,8 +30,8 @@
                 <tr>
                     <td>{{ item.category }}</td>
                     <td>{{ item.description}}</td>
-                    <td>{{ item.years }}</td>
-                    <td>{{ item.image }}</td>
+                    <td>{{ item.functionality }}</td>
+                    <td>{{ pic }}</td>
                     <td>{{ item.location }}</td>
                 </tr>
             </tbody>

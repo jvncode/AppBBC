@@ -5,10 +5,10 @@
 {% block section %}
 <a href="/mySpace" class="button" style="margin-left:80%; position:fixed">Mi Área Personal</a>
 {% if success_message %} <span style='color: red; margin-left:2%; font-size:medium; position:fixed'>{{ success_message|safe }}</span>{% endif %}
-    <form method="POST" style="text-align: center;">
-    {% csrf_token %}
-    {{ form.as_table }}
-    <br>
-    <button type="submit" class="button">Publicar producto</button>
+    <form enctype=”multipart/form-data” method="POST" style="text-align: center;">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <br>
+        <button type="submit" class="button">Publicar producto</button>
     </form>
 {% endblock %}
