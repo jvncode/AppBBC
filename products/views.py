@@ -9,11 +9,14 @@ from django.utils.html import format_html
 class MyProducts(View):
     
     def get(self, request):
-        products = Product.objects.all()
-        pic = format_html('<img src=/media/{} width="80" height="50"/>', Product.image)
+        pics = []
+        products = Product.objects.filter(owner=request.user)
+        imgs = Product.objects.filter(image=True)
+        for img in imgs:
+            pics += format_html('<img src=/media/{} width="80" height="50"/>', img)
         context = {
             'products_list': products,
-            'pic': pic
+            'pics': pics
         }
         return render(request, 'products/myProducts.html', context)
 

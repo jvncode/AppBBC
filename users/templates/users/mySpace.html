@@ -6,8 +6,9 @@
     {% csrf_token %}
     <h4 align='center'><u>Área personal de {{ user }}</u></h4>
     <br>
-    <a href="/myProducts" class="button" style="position: fixed; margin-left:21%">Mis productos publicados</a>
+    <a href="/myProducts" class="button" style="position: fixed; margin-left:21%">Mis productos publicados<br><h5>{{ products_user_pub }}</h5></a>
     <a href="/newProduct" class="button" style="position: fixed; margin-left:41%">Publicar nuevo producto</a>
-    <a href="/searchProduct" class="button" style="position: fixed; margin-left:61%">Buscar productos</a>
-    <br><br><hr>
+    <a href="/searchProduct" class="button" style="position: fixed; margin-left:61%">Buscar productos<br><h5>{{ products_users_pub }}</h5>
+    </a>
+    <br><br><br><hr>
 {% endblock %}

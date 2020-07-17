@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/static/css/skeleton.css">
     <h1 align='center'>Baby Converter</h1>
     {% if request.user.is_authenticated %}
-        <p style="margin-left: 82%; top:4%; position: fixed; color:rgb(180, 7, 7)"><strong>Bienvenido {{ request.user }}</strong></p>
+        <p style="margin-left: 82%; top:4%; position: fixed; color:rgb(180, 7, 7)"><strong>Bienvenid@, {{ request.user }}</strong></p>
         <a href="/logout" class="button" style="margin-left:80%; position: fixed">Cerrar sesión</a>
     {% endif %}
     <h5 align='center'>Convierte lo que tu bebé ya no usa en algo que necesita</h5>
