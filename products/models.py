@@ -14,7 +14,7 @@ class Product(models.Model):
     category = models.CharField(max_length=3, choices=CATEGORIES, verbose_name='Categoría')
     description = models.TextField(max_length=100, blank=False, null=False, default='', verbose_name='Descripción del producto')
     functionality = models.CharField(blank=True, max_length=3, choices=FUNCTIONALITIES, null=False, verbose_name='Estado de uso')
-    image = models.ImageField(blank=True, null=True, upload_to=upload_location, default='NotImage.png', verbose_name='Fotografía')
+    image = models.ImageField(blank=True, null=True, upload_to=upload_location, verbose_name='Fotografía')
     location = models.CharField(max_length=20, blank=False, null=False, verbose_name='Localidad')
 
     def __str__(self):

@@ -37,14 +37,19 @@ class CreateProduct(View):
         form = ProductForm(request.POST, request.FILES, instance=product_with_owner)
         if form.is_valid():
             form.save()
-            form = ProductForm()
             success_message = '¡Producto publicado con éxito!'
         context = {
-            'form': form,
+            'form_category': form.data['category'],
+            'form_description': form.data['description'],
+            'form_functionality': form.data['functionality'],
+            'form_image': format_html('<img src=/media/{}/{} width="230" height="200"/>'.format(request.user, form.data['image'])),
+            'form_location': form.data['location'],
             'success_message': success_message,
         }
-        return render(request, 'products/newProduct.html', context)
+        return render(request, 'products/newProductOk.html', context)
     
+class ProductOk(View):
+    pass
 
 class SearchProduct(View):
     def get(self, request):
