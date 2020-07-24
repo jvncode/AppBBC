@@ -9,15 +9,11 @@ from django.utils.html import format_html
 class MyProducts(View):
     
     def get(self, request):
-        pics = []
         products = Product.objects.filter(owner=request.user)
-        imgs = Product.objects.filter(image=True)
-        for img in imgs:
-            pics += format_html('<img src=/media/{} width="80" height="50"/>', img)
         context = {
             'products_list': products,
-            'pics': pics
         }
+
         return render(request, 'products/myProducts.html', context)
 
 class CreateProduct(View):
@@ -45,7 +41,7 @@ class CreateProduct(View):
             'form_category': form.data['category'],
             'form_description': form.data['description'],
             'form_functionality': form.data['functionality'],
-            'form_image': format_html('<img src=/media/{}/{} width="230" height="200"/>'.format(request.user, form.data['image'])),
+            'form_image': format_html('<img src=/media/{}/{} width="230" height="200"/>'.format(request.user, request.FILES['image'])),
             'form_location': form.data['location'],
             'success_message': success_message,
         }
@@ -62,10 +58,8 @@ class SearchProduct(View):
         q = request.POST.get('BusquedaSet')
         if q != '':
             products = Product.objects.filter(description__icontains=q)
-            pic = format_html('<img src=/media/{} width="80" height="50"/>', Product.image)
             context = {
                 'products': products,
-                'pic': pic,
             }
         else:
             products = None

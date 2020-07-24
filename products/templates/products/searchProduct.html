@@ -31,7 +31,11 @@
                     <td>{{ item.category }}</td>
                     <td>{{ item.description}}</td>
                     <td>{{ item.functionality }}</td>
-                    <td>{{ pic }}</td>
+                    {% if item.image %}
+                        <td> <img src=/media/{{item.image}} width="130" height="100" /></td>
+                    {% else %}
+                        <td> ------- </td>
+                    {% endif %}
                     <td>{{ item.location }}</td>
                 </tr>
             </tbody>
