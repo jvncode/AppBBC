@@ -4,16 +4,23 @@ from products.models import Product
 from products.forms import ProductForm
 from django.conf import settings
 from django.utils.html import format_html
+from appbbc.settings import CATEGORIES, FUNCTIONALITIES
+
+
 
 
 class MyProducts(View):
-    
+
     def get(self, request):
         products = Product.objects.filter(owner=request.user)
+        cats = []
+        for row in products:
+            cats.append(dict(CATEGORIES)[row.category])
         context = {
             'products_list': products,
+            'cats': cats,
         }
-
+        print(context)
         return render(request, 'products/myProducts.html', context)
 
 class CreateProduct(View):
@@ -68,3 +75,7 @@ class SearchProduct(View):
             }
         return render(request, 'products/searchProduct.html', context)
 
+
+class ProductCard(View):
+    def get(self, request):
+        return render(request, 'products/productCard.html')
