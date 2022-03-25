@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %} B&C - Bienvenid@ a Baby Converter {% endblock %}
+{% block title %} B&C - Welcome to Baby Converter {% endblock %}
 
 {% block section %}
     {% csrf_token %}
-    <h4 align='center'><u>Área personal de {{ user }}</u></h4>
+    <h4 align='center'><u>Personal Area</u></h4>
     <br>
-    <a href="/myProducts" class="button" style="position: fixed; margin-left:21%">Mis productos publicados<br><h5>{{ products_user_pub }}</h5></a>
-    <a href="/newProduct" class="button" style="position: fixed; margin-left:41%">Publicar nuevo producto</a>
-    <a href="/searchProduct" class="button" style="position: fixed; margin-left:61%">Buscar productos<br><h5>{{ products_users_pub }}</h5>
+    <a href="/myProducts" class="button" style="position: fixed; margin-left:21%">My published products<br><h5>{{ products_user_pub }}</h5></a>
+    <a href="/newProduct" class="button" style="position: fixed; margin-left:41%">Publish new product</a>
+    <a href="/searchProduct" class="button" style="position: fixed; margin-left:61%">Search products<br><h5>{{ products_users_pub }}</h5>
     </a>
     <br><br><br><hr>
 {% endblock %}

@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="/static/css/normalize.css">
     <link rel="stylesheet" href="/static/css/skeleton.css">
-    <h1 align='center'>Baby Converter</h1>
+    <h2 align='center'>Baby Converter</h2>
     {% if request.user.is_authenticated %}
-        <p style="margin-left: 82%; top:4%; position: fixed; color:rgb(180, 7, 7)"><strong>Bienvenid@, {{ request.user }}</strong></p>
-        <a href="/logout" class="button" style="margin-left:80%; position: fixed">Cerrar sesión</a>
+        <p style="margin-left: 82%; top:4%; position: fixed; color:rgb(180, 7, 7)"><strong>Welcome, {{ request.user }}</strong></p>
+        <a href="/logout" class="button" style="margin-left:80%; position: fixed">Logout</a>
     {% endif %}
-    <h5 align='center'>Convierte lo que tu bebé ya no usa en algo que necesita</h5>
+    <h6 align='center'><i>Converts what your baby does not use anything in something that needs</i> </h6>
     <hr>
 
 </head>
@@ -24,6 +24,6 @@
 
 <footer style="position: fixed; bottom:0px">
     <hr style="width: 730%;">
-    <small>Baby Converter &copy; 2020 Todos los derechos reservados</small>
+    <small>Baby Converter v2.0 &copy; 2022 All rights reserved</small>
 </footer>
 </html>

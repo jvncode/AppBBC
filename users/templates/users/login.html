@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %} B&C - Inicio de Sesión {% endblock %}
+{% block title %} B&C - Login {% endblock %}
 
 {% block section %}
-    <h2 align='center'>Iniciar sesión</h2>
+    <h2 align='center'>Login</h2>
     <form method="POST" style="text-align: center;">
         {{ form.as_p }}
         {% csrf_token %}
-        <button type="submit">Login</button>
+        <button type="submit">Go!</button>
     </form>
-    <a href="/register" class="button" style="text-align: center;">Registrar usuario</a>
+    <a href="/register" class="button" style="text-align: center;">Register user</a>
 
 {% endblock %}
 

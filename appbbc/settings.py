@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'appbbc',
     'users',
     'products',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ],
+}
+
 
 ROOT_URLCONF = 'appbbc.urls'
 
@@ -122,7 +132,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# CATEGORIAS
 CATEGORIES = (
     ('MOB', 'Mobiliario'),
     ('TEX', 'Textil'),
@@ -131,11 +140,10 @@ CATEGORIES = (
     ('JUG', 'Juguetes'),
 )
 
-# FUNCIONALIDADES
 FUNCTIONALITIES = (
-    ('PER', 'Como nuevo y en perfecto estado de uso'),
-    ('NOR', 'Algún deterioro pero no afecta a su funcionalidad'),
-    ('DEF', 'Algún deterioro que afecta ligeramente a su funcionalidad')
+    ('PER', 'New or in perfect condition'),
+    ('NOR', 'Some deterioration but does not affect its functionality'),
+    ('DEF', 'Some deterioration that slightly affects its functionality')
 )
 
 MEDIA_URL = '/media/'

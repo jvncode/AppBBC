@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %} B&C - Mis productos publicados {% endblock %}
+{% block title %} B&C - My published products {% endblock %}
 
 {% block section %}
-    <h4 align='center'><u>Mis productos publicados</u></h4>
-    <a href="/mySpace" class="button" style="margin-left:79%; margin-top:-5%; position:fixed">Mi Área Personal</a>
+    <h4 align='center'><u>My published products</u></h4>
+    <a href="/mySpace" class="button" style="margin-left:79%; margin-top:-5%; position:fixed">My personal area</a>
     <div id="div1">
         <table class="u-full-width" border="5">
             <thead>
                 <tr>
-                    <th>Categoria</th>
-                    <th>Descripción</th>
-                    <th>Imagen</th>
-                    <th>Ubicación</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Location</th>
                 </tr>
             </thead>
         {% for item in products_list %}
             <tbody>
                 <tr>
-                    <td>{{ item.category }}</td>
+                    <td>{{ item.category_bk }}</td>
                     <td>{{ item.description }}</td>
                     {% if item.image %}
                         <td> <img src=/media/{{item.image}} width="130" height="100" /></td>

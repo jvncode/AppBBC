@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %} B&C - Búsqueda de artículos {% endblock %}
+{% block title %} B&C - Search for articles {% endblock %}
 
 {% block section %}
-    <h4 align='center'><u>Búsqueda de artículos</u></h4>
+    <h4 align='center'><u>Search for articles</u></h4>
     <form method="POST">
     {% csrf_token %}
-        <input type="text" id="BusquedaSet" name="BusquedaSet" style="position:fixed; margin-left:28%" size="80" placeholder="Busca el artículo que te interesa">
-        <button type="submit" class="button" style="position: fixed; margin-left:75%">Buscar artículo</button>
+        <input type="text" id="BusquedaSet" name="BusquedaSet" style="position:fixed; margin-left:28%" size="80" placeholder="Search here the article that interests you">
+        <button type="submit" class="button" style="position: fixed; margin-left:70%">Search article</button>
     </form>
     <br><br>
-    <a href="/mySpace" class="button" style="margin-left:79%; margin-top:-9%; position:fixed">Mi Área Personal</a>
+    <a href="/mySpace" class="button" style="margin-left:79%; margin-top:-9%; position:fixed">My personal area</a>
     {% if method == POST %}
     {% if products != None %}
     <br><br>
@@ -18,17 +18,17 @@
         <table class="u-full-width" border="5">
             <thead>
                 <tr>
-                    <th>Categoria</th>
-                    <th>Descripción</th>
-                    <th>Estado de uso</th>
-                    <th>Imagen</th>
-                    <th>Ubicación</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Use status</th>
+                    <th>Image</th>
+                    <th>Location</th>
                 </tr>
             </thead>
             {% for item in products %}
             <tbody>
                 <tr>
-                    <td>{{ item.category }}</td>
+                    <td>{{ item.category_bk }}</td>
                     <td><a href="/productCard">{{ item.description}}</a></td>
                     <td>{{ item.functionality }}</td>
                     {% if item.image %}

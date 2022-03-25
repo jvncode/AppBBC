@@ -12,58 +12,45 @@ def welcome(request):
     return redirect('/login')
 
 def register(request):
-    # Creamos el formulario de autenticación vacío
+    # Create empty authentication form
     form = UserCreationForm()
     form.fields['username'].help_text = None
     form.fields['password1'].help_text = None
     form.fields['password2'].help_text = None
     if request.method == "POST":
-        # Añadimos los datos recibidos al formulario
+        # Add the data received to the form
         form = UserCreationForm(data=request.POST)
-        # Si el formulario es válido...
         if form.is_valid():
-            # Creamos la nueva cuenta de usuario
+            # Creation of new user account
             user = form.save()
-            # Si el usuario se crea correctamente 
             if user is not None:
-                # Hacemos el login manualmente
                 do_login(request, user)
-                # Y le redireccionamos a la portada
                 return redirect('/')
-
-    # Si llegamos al final renderizamos el formulario
     return render(request, "users/register.html", {'form': form})
 
 def login(request):
     form = AuthenticationForm()
     if request.method == "POST":
-        # Añadimos los datos recibidos al formulario
+        # Add the data received to the form
         form = AuthenticationForm(data=request.POST)
-        # Si el formulario es válido...
         if form.is_valid():
-            # Recuperamos las credenciales validadas
+            # Retrieval of validated credentials
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
 
-            # Verificamos las credenciales del usuario
+            # Verification of user credentials
             user = authenticate(username=username, password=password)
 
-            # Si existe un usuario con ese nombre y contraseña
             if user is not None:
-                # Hacemos el login manualmente
                 do_login(request, user)
-                # Y le redireccionamos a la portada
                 products_user_pub = len(Product.objects.filter(owner=request.user))
                 products_users_pub = len(Product.objects.all())
                 context = {
                     'user': user,
                     'products_user_pub': products_user_pub,
                     'products_users_pub': products_users_pub,
-
                 }
                 return render(request, 'users/mySpace.html', context)
-
-    # Si llegamos al final renderizamos el formulario
     return render(request, "users/login.html", {'form': form})
 
 def logout(request):
@@ -74,7 +61,7 @@ def logout(request):
 class mySpace(View):
 
     def get(self, request):
-        # Si estamos identificados devolvemos la portada
+        # If there is identification, it is redirected to the personal area
         if request.user.is_authenticated:
             products_user_pub = len(Product.objects.filter(owner=request.user))
             products_users_pub = len(Product.objects.all())
@@ -84,7 +71,6 @@ class mySpace(View):
 
             }
             return render(request, "users/mySpace.html", context)
-        # En otro caso redireccionamos al login
+        # In another case we redirect to the login
         else:
             return redirect('/login')
-

@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %} B&C - Confirmar producto {% endblock %}
+{% block title %} B&C - Confirm product {% endblock %}
 
 {% block section %}
 
-    <h4 align='center'><u>Mi producto publicado</u></h4>
+    <h4 align='center'><u>My product published</u></h4>
     <a href="/mySpace" class="button" style="margin-left:79%; margin-top:-5%; position:fixed">Mi Área Personal</a>
     <br><br>
-    <h5 style="margin-left: 5%;"><strong> Categoría: {{ form_category }} </strong></h5>
-    <h5 style="margin-left: 5%;"><strong> Descripción: {{ form_description }} </strong></h5>
-    <h5 style="margin-left: 5%;"><strong> Estado de uso: {{ form_functionality }} </strong></h5>
+    <h5 style="margin-left: 5%;"><strong> Category: {{ form_category }} </strong></h5>
+    <h5 style="margin-left: 5%;"><strong> Description: {{ form_description }} </strong></h5>
+    <h5 style="margin-left: 5%;"><strong> Use status: {{ form_functionality }} </strong></h5>
     <h5 style="margin-left:42%; top: 35%; position:fixed">{{ form_image }}</h5>
-    <h5 style="margin-left: 75%; top:50%; position:fixed"><strong> Ubicación: {{ form_location }} </strong></h5>
+    <h5 style="margin-left: 75%; top:50%; position:fixed"><strong> Location: {{ form_location }} </strong></h5>
     <br>
     <h5 align='center' style="color: red;">{{ success_message }}</h3>
 
