@@ -39,7 +39,7 @@ python manage.py runserver
 * English version app
 * API implementation
     - Endpoint lists all the products: http://127.0.0.1:8000/api/products/id/
-    - Endpoint Product by ID (Edit & Delete): http://127.0.0.1:8000/api/products/id/1/
-    - Endpoint product search: http://127.0.0.1:8000/api/products_search/?search=
+    - Endpoint product by ID (Edit & Delete): http://127.0.0.1:8000/api/products/id/1/
+    - Endpoint search by product description: http://127.0.0.1:8000/api/products_search/?search=
 
 
