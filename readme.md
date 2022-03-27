@@ -42,4 +42,9 @@ python manage.py runserver
     - Endpoint product by ID (Edit & Delete): http://127.0.0.1:8000/api/products/id/1/
     - Endpoint search by product description: http://127.0.0.1:8000/api/products_search/?search=
 
+* Testing
+    - TestCase Login
+    - TestCase Models (Category & Product)
+
+____
 
