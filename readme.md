@@ -46,5 +46,7 @@ python manage.py runserver
     - TestCase Login
     - TestCase Models (Category & Product)
 
+* App Dockerization
+
 ____
 
