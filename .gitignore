@@ -1,8 +1,8 @@
 .vscode/
 venvBBC/
-appbbc/__pycache__/
 __pycache__/
 dump.sql
 media/Fran/
 media/jvn/
 ./media/NotImage.png
+.env
